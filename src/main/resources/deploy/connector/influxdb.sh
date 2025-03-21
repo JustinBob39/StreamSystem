@@ -1,0 +1,1 @@
+confluent-hub install confluentinc/kafka-connect-influxdb:1.2.7

@@ -1,0 +1,1 @@
+docker run --name mosquitto -p 1881:1881 -v `pwd`/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto

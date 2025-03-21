@@ -1,0 +1,134 @@
+{
+  "name": "SingleStationLine",
+  "type": "record",
+  "namespace": "ntsc.cas.cn.avro.difference.singleStationLine",
+  "fields": [
+    {
+      "name": "frameStatus",
+      "type": "string",
+      "doc": "INITIAL,NORMAL,TIMEOUT"
+    },
+    {
+      "name": "parentEventTime",
+      "type": "string",
+      "doc": "YYMMDDHHMMSS"
+    },
+    {
+      "name": "parentStatus",
+      "type": "string",
+      "doc": "Normal, Fault, Maintenance"
+    },
+    {
+      "name": "firstChildId",
+      "type": "int",
+      "doc": "range 01,02,03,...,16"
+    },
+    {
+      "name": "firstChildEventTime",
+      "type": "string",
+      "doc": "YYMMDDHHMMSS"
+    },
+    {
+      "name": "firstChildDuration",
+      "type": "string",
+      "doc": "3min,5min,10min"
+    },
+    {
+      "name": "firstChildValueFirst_String",
+      "type": "string",
+      "doc": "-2048.0"
+    },
+    {
+      "name": "firstChildValueFirst_Float",
+      "type": "float",
+      "doc": "-2048.0"
+    },
+    {
+      "name": "firstChildValueSecond_String",
+      "type": "string",
+      "doc": "-1.2345"
+    },
+    {
+      "name": "firstChildValueSecond_Float",
+      "type": "float",
+      "doc": "-1.2345"
+    },
+    {
+      "name": "secondChildId",
+      "type": "int",
+      "doc": "range 01,02,03,...,16"
+    },
+    {
+      "name": "secondChildEventTime",
+      "type": "string",
+      "doc": "YYMMDDHHMMSS"
+    },
+    {
+      "name": "secondChildDuration",
+      "type": "string",
+      "doc": "3min,5min,10min"
+    },
+    {
+      "name": "secondChildValueFirst_String",
+      "type": "string",
+      "doc": "-2048.0"
+    },
+    {
+      "name": "secondChildValueFirst_Float",
+      "type": "float",
+      "doc": "-2048.0"
+    },
+    {
+      "name": "secondChildValueSecond_String",
+      "type": "string",
+      "doc": "-1.2345"
+    },
+    {
+      "name": "secondChildValueSecond_Float",
+      "type": "float",
+      "doc": "-1.2345"
+    },
+    {
+      "name": "thirdChildId",
+      "type": "int",
+      "doc": "range 01,02,03,...,16"
+    },
+    {
+      "name": "thirdChildEventTime",
+      "type": "string",
+      "doc": "YYMMDDHHMMSS"
+    },
+    {
+      "name": "thirdChildDuration",
+      "type": "string",
+      "doc": "3min,5min,10min"
+    },
+    {
+      "name": "thirdChildValueFirst_String",
+      "type": "string",
+      "doc": "-2048.0"
+    },
+    {
+      "name": "thirdChildValueFirst_Float",
+      "type": "float",
+      "doc": "-2048.0"
+    },
+    {
+      "name": "thirdChildValueSecond_String",
+      "type": "string",
+      "doc": "-1.2345"
+    },
+    {
+      "name": "thirdChildValueSecond_Float",
+      "type": "float",
+      "doc": "-1.2345"
+    },
+    {
+      "name": "tags",
+      "type": {
+        "type": "map",
+        "values": "string"
+      }
+    }
+  ]
+}

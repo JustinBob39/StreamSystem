@@ -1,0 +1,116 @@
+{
+  "name": "OneRound",
+  "type": "record",
+  "namespace": "ntsc.cas.cn.avro.difference.oneRound",
+  "fields": [
+    {
+      "name": "allStations",
+      "doc": "175 stations",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "SingleStation",
+          "type": "record",
+          "fields": [
+            {
+              "name": "frameStatus",
+              "type": {
+                "type": "enum",
+                "name": "FrameStatus",
+                "symbols": [
+                  "INITIAL",
+                  "NORMAL",
+                  "TIMEOUT"
+                ]
+              },
+              "default": "NORMAL"
+            },
+            {
+              "name": "parentId",
+              "type": "int",
+              "doc": "range 001,002,003,...,175"
+            },
+            {
+              "name": "parentEventTime",
+              "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis",
+                "doc": "UTC standard"
+              }
+            },
+            {
+              "name": "parentStatus",
+              "type": {
+                "type": "enum",
+                "name": "Status",
+                "symbols": [
+                  "NORMAL",
+                  "FAULT",
+                  "MAINTENANCE"
+                ]
+              }
+            },
+            {
+              "name": "children",
+              "doc": "3 child",
+              "type": {
+                "type": "array",
+                "items": {
+                  "name": "Child",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "childId",
+                      "type": "int",
+                      "doc": "range 01,02,03,...,16"
+                    },
+                    {
+                      "name": "childEventTime",
+                      "type": {
+                        "type": "long",
+                        "logicalType": "timestamp-millis",
+                        "doc": "UTC standard"
+                      }
+                    },
+                    {
+                      "name": "childDuration",
+                      "type": {
+                        "name": "Duration",
+                        "type": "enum",
+                        "symbols": [
+                          "_3MIN",
+                          "_5MIN",
+                          "_10MIN"
+                        ]
+                      }
+                    },
+                    {
+                      "name": "childValueFirst",
+                      "type": {
+                        "type": "bytes",
+                        "logicalType": "decimal",
+                        "precision": 5,
+                        "scale": 1,
+                        "doc": "like -2048.0"
+                      }
+                    },
+                    {
+                      "name": "childValueSecond",
+                      "type": {
+                        "type": "bytes",
+                        "logicalType": "decimal",
+                        "precision": 5,
+                        "scale": 4,
+                        "doc": "like -1.2345"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

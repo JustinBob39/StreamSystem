@@ -1,0 +1,1 @@
+confluent-hub install confluentinc/kafka-connect-mqtt:1.7.0

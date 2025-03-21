@@ -1,0 +1,14 @@
+{
+  "name": "InfluxDBSinkConnectorConnector_Difference",
+  "config": {
+    "connector.class": "io.confluent.influxdb.InfluxDBSinkConnector",
+    "tasks.max": "1",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "topics": "Operator-InfluxDB_Difference",
+    "influxdb.url": "http://192.168.1.108:8086",
+    "influxdb.db": "difference",
+    "measurement.name.format": "${topic}",
+    "value.converter.schema.registry.url": "http://192.168.1.108:8081"
+  }
+}
