@@ -32,6 +32,10 @@ public class DifferenceForwarder implements Forwarder {
     // validate
     static final int innerCapacity = 16;
     static final int capacity = 4;
+    static final BigDecimal firstUpper = new BigDecimal("+2047");
+    static final BigDecimal firstLower = new BigDecimal("-2047");
+    static final BigDecimal secondUpper = new BigDecimal("+2");
+    static final BigDecimal secondLower = new BigDecimal("-2");
     // initial broadcast
     static final Map<Integer, SingleStation> cache = new TreeMap<>();
 
@@ -96,6 +100,8 @@ public class DifferenceForwarder implements Forwarder {
                 allStations.forEach(station -> {
                     if (validate(station)) {
                         cache.put(station.getParentId(), station);
+                    } else {
+                        logger.info("Data invalidate");
                     }
                 });
                 assert (cache.size() <= capacity); // defensive
@@ -125,14 +131,49 @@ public class DifferenceForwarder implements Forwarder {
     @Override
     public boolean validate(final Object avro) {
         final SingleStation station = (SingleStation) avro;
+        if (station.getChildren().size() != 3) {
+            return false;
+        }
         if (station.getParentId() <= 0 || station.getParentId() > capacity) {
             return false;
         }
+        final Instant parentEventTime = station.getParentEventTime();
+        if (parentEventTime.isAfter(Instant.now())) {
+            return false;
+        }
+        // parentStatus enum enough
+        final Conversions.DecimalConversion conversion = new Conversions.DecimalConversion();
+        final Schema allStationsSchema = OneRound.getClassSchema().getField("allStations").schema().getElementType();
+        final Schema childrenSchema = allStationsSchema.getField("children").schema().getElementType();
+        final LogicalType typeFirst = childrenSchema.getField("childValueFirst").schema().getLogicalType();
+        final LogicalType typeSecond = childrenSchema.getField("childValueSecond").schema().getLogicalType();
         for (int i = 0; i < 3; i++) {
-            final int childId = station.getChildren().get(i).getChildId();
+            final Child child = station.getChildren().get(i);
+            final int childId = child.getChildId();
             if (childId < 0 || childId > innerCapacity) {
                 return false;
             }
+            final Instant childEventTime = child.getChildEventTime();
+            if (childEventTime.isAfter(Instant.now())) {
+                return false;
+            }
+            final ByteBuffer childValueFirst = child.getChildValueFirst();
+            final ByteBuffer childValueSecond = child.getChildValueSecond();
+            final BigDecimal decimalFirst = conversion.fromBytes(childValueFirst, null, typeFirst);
+            final BigDecimal decimalSecond = conversion.fromBytes(childValueSecond, null, typeSecond);
+            if (decimalFirst.compareTo(firstUpper) > 0) {
+                return false;
+            }
+            if (decimalFirst.compareTo(firstLower) < 0) {
+                return false;
+            }
+            if (decimalSecond.compareTo(secondUpper) > 0) {
+                return false;
+            }
+            if (decimalSecond.compareTo(secondLower) < 0) {
+                return false;
+            }
+            // childDuration enum enough
         }
         return true;
     }

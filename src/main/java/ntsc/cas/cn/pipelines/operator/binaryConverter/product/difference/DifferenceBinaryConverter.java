@@ -56,6 +56,7 @@ public class DifferenceBinaryConverter implements BinaryConverter {
         // interEntry.parentEventTime
         Util.fillTime(interEntry.parentEventTime, station.getParentEventTime());
         interEntry.parentStatus = station.getParentStatus().ordinal();
+        assert (station.getChildren().size() == 3);
         // interEntry.children[0]
         fillSubEntry(interEntry.subEntries[0], station.getChildren().get(0));
         // interEntry.children[1]
