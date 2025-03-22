@@ -40,7 +40,7 @@
     },
     {
       "name": "firstChildValueFirst_Float",
-      "type": "float",
+      "type": "double",
       "doc": "-2048.0"
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "firstChildValueSecond_Float",
-      "type": "float",
+      "type": "double",
       "doc": "-1.2345"
     },
     {
@@ -75,7 +75,7 @@
     },
     {
       "name": "secondChildValueFirst_Float",
-      "type": "float",
+      "type": "double",
       "doc": "-2048.0"
     },
     {
@@ -85,7 +85,7 @@
     },
     {
       "name": "secondChildValueSecond_Float",
-      "type": "float",
+      "type": "double",
       "doc": "-1.2345"
     },
     {
@@ -110,7 +110,7 @@
     },
     {
       "name": "thirdChildValueFirst_Float",
-      "type": "float",
+      "type": "double",
       "doc": "-2048.0"
     },
     {
@@ -120,7 +120,7 @@
     },
     {
       "name": "thirdChildValueSecond_Float",
-      "type": "float",
+      "type": "double",
       "doc": "-1.2345"
     },
     {

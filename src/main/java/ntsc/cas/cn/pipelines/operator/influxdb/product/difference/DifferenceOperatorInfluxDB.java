@@ -99,9 +99,9 @@ public class DifferenceOperatorInfluxDB implements OperatorInfluxDB {
         ByteBuffer childValueSecond = station.getChildren().get(0).getChildValueSecond();
         BigDecimal decimalFirst = conversion.fromBytes(childValueFirst, null, typeFirst);
         BigDecimal decimalSecond = conversion.fromBytes(childValueSecond, null, typeSecond);
-        builder.setFirstChildValueFirstFloat(decimalFirst.floatValue());
+        builder.setFirstChildValueFirstFloat(decimalFirst.doubleValue());
         builder.setFirstChildValueFirstString(decimalFirst.toPlainString());
-        builder.setFirstChildValueSecondFloat(decimalSecond.floatValue());
+        builder.setFirstChildValueSecondFloat(decimalSecond.doubleValue());
         builder.setFirstChildValueSecondString(decimalSecond.toPlainString());
 
         builder.setSecondChildId(station.getChildren().get(1).getChildId());
@@ -112,9 +112,9 @@ public class DifferenceOperatorInfluxDB implements OperatorInfluxDB {
         childValueSecond = station.getChildren().get(1).getChildValueSecond();
         decimalFirst = conversion.fromBytes(childValueFirst, null, typeFirst);
         decimalSecond = conversion.fromBytes(childValueSecond, null, typeSecond);
-        builder.setSecondChildValueFirstFloat(decimalFirst.floatValue());
+        builder.setSecondChildValueFirstFloat(decimalFirst.doubleValue());
         builder.setSecondChildValueFirstString(decimalFirst.toPlainString());
-        builder.setSecondChildValueSecondFloat(decimalSecond.floatValue());
+        builder.setSecondChildValueSecondFloat(decimalSecond.doubleValue());
         builder.setSecondChildValueSecondString(decimalSecond.toPlainString());
 
         builder.setThirdChildId(station.getChildren().get(2).getChildId());
@@ -125,9 +125,9 @@ public class DifferenceOperatorInfluxDB implements OperatorInfluxDB {
         childValueSecond = station.getChildren().get(2).getChildValueSecond();
         decimalFirst = conversion.fromBytes(childValueFirst, null, typeFirst);
         decimalSecond = conversion.fromBytes(childValueSecond, null, typeSecond);
-        builder.setThirdChildValueFirstFloat(decimalFirst.floatValue());
+        builder.setThirdChildValueFirstFloat(decimalFirst.doubleValue());
         builder.setThirdChildValueFirstString(decimalFirst.toPlainString());
-        builder.setThirdChildValueSecondFloat(decimalSecond.floatValue());
+        builder.setThirdChildValueSecondFloat(decimalSecond.doubleValue());
         builder.setThirdChildValueSecondString(decimalSecond.toPlainString());
 
         logger.info("Station {} convert to line", station.getParentId());

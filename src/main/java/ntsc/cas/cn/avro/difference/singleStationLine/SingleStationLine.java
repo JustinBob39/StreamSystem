@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 546826118188707736L;
+  private static final long serialVersionUID = 3140518238489104842L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SingleStationLine\",\"namespace\":\"ntsc.cas.cn.avro.difference.singleStationLine\",\"fields\":[{\"name\":\"frameStatus\",\"type\":\"string\",\"doc\":\"INITIAL,NORMAL,TIMEOUT\"},{\"name\":\"parentEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"parentStatus\",\"type\":\"string\",\"doc\":\"Normal, Fault, Maintenance\"},{\"name\":\"firstChildId\",\"type\":\"int\",\"doc\":\"range 01,02,03,...,16\"},{\"name\":\"firstChildEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"firstChildDuration\",\"type\":\"string\",\"doc\":\"3min,5min,10min\"},{\"name\":\"firstChildValueFirst_String\",\"type\":\"string\",\"doc\":\"-2048.0\"},{\"name\":\"firstChildValueFirst_Float\",\"type\":\"float\",\"doc\":\"-2048.0\"},{\"name\":\"firstChildValueSecond_String\",\"type\":\"string\",\"doc\":\"-1.2345\"},{\"name\":\"firstChildValueSecond_Float\",\"type\":\"float\",\"doc\":\"-1.2345\"},{\"name\":\"secondChildId\",\"type\":\"int\",\"doc\":\"range 01,02,03,...,16\"},{\"name\":\"secondChildEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"secondChildDuration\",\"type\":\"string\",\"doc\":\"3min,5min,10min\"},{\"name\":\"secondChildValueFirst_String\",\"type\":\"string\",\"doc\":\"-2048.0\"},{\"name\":\"secondChildValueFirst_Float\",\"type\":\"float\",\"doc\":\"-2048.0\"},{\"name\":\"secondChildValueSecond_String\",\"type\":\"string\",\"doc\":\"-1.2345\"},{\"name\":\"secondChildValueSecond_Float\",\"type\":\"float\",\"doc\":\"-1.2345\"},{\"name\":\"thirdChildId\",\"type\":\"int\",\"doc\":\"range 01,02,03,...,16\"},{\"name\":\"thirdChildEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"thirdChildDuration\",\"type\":\"string\",\"doc\":\"3min,5min,10min\"},{\"name\":\"thirdChildValueFirst_String\",\"type\":\"string\",\"doc\":\"-2048.0\"},{\"name\":\"thirdChildValueFirst_Float\",\"type\":\"float\",\"doc\":\"-2048.0\"},{\"name\":\"thirdChildValueSecond_String\",\"type\":\"string\",\"doc\":\"-1.2345\"},{\"name\":\"thirdChildValueSecond_Float\",\"type\":\"float\",\"doc\":\"-1.2345\"},{\"name\":\"tags\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SingleStationLine\",\"namespace\":\"ntsc.cas.cn.avro.difference.singleStationLine\",\"fields\":[{\"name\":\"frameStatus\",\"type\":\"string\",\"doc\":\"INITIAL,NORMAL,TIMEOUT\"},{\"name\":\"parentEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"parentStatus\",\"type\":\"string\",\"doc\":\"Normal, Fault, Maintenance\"},{\"name\":\"firstChildId\",\"type\":\"int\",\"doc\":\"range 01,02,03,...,16\"},{\"name\":\"firstChildEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"firstChildDuration\",\"type\":\"string\",\"doc\":\"3min,5min,10min\"},{\"name\":\"firstChildValueFirst_String\",\"type\":\"string\",\"doc\":\"-2048.0\"},{\"name\":\"firstChildValueFirst_Float\",\"type\":\"double\",\"doc\":\"-2048.0\"},{\"name\":\"firstChildValueSecond_String\",\"type\":\"string\",\"doc\":\"-1.2345\"},{\"name\":\"firstChildValueSecond_Float\",\"type\":\"double\",\"doc\":\"-1.2345\"},{\"name\":\"secondChildId\",\"type\":\"int\",\"doc\":\"range 01,02,03,...,16\"},{\"name\":\"secondChildEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"secondChildDuration\",\"type\":\"string\",\"doc\":\"3min,5min,10min\"},{\"name\":\"secondChildValueFirst_String\",\"type\":\"string\",\"doc\":\"-2048.0\"},{\"name\":\"secondChildValueFirst_Float\",\"type\":\"double\",\"doc\":\"-2048.0\"},{\"name\":\"secondChildValueSecond_String\",\"type\":\"string\",\"doc\":\"-1.2345\"},{\"name\":\"secondChildValueSecond_Float\",\"type\":\"double\",\"doc\":\"-1.2345\"},{\"name\":\"thirdChildId\",\"type\":\"int\",\"doc\":\"range 01,02,03,...,16\"},{\"name\":\"thirdChildEventTime\",\"type\":\"string\",\"doc\":\"YYMMDDHHMMSS\"},{\"name\":\"thirdChildDuration\",\"type\":\"string\",\"doc\":\"3min,5min,10min\"},{\"name\":\"thirdChildValueFirst_String\",\"type\":\"string\",\"doc\":\"-2048.0\"},{\"name\":\"thirdChildValueFirst_Float\",\"type\":\"double\",\"doc\":\"-2048.0\"},{\"name\":\"thirdChildValueSecond_String\",\"type\":\"string\",\"doc\":\"-1.2345\"},{\"name\":\"thirdChildValueSecond_Float\",\"type\":\"double\",\"doc\":\"-1.2345\"},{\"name\":\"tags\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -88,11 +88,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
   /** -2048.0 */
   private java.lang.CharSequence firstChildValueFirst_String;
   /** -2048.0 */
-  private float firstChildValueFirst_Float;
+  private double firstChildValueFirst_Float;
   /** -1.2345 */
   private java.lang.CharSequence firstChildValueSecond_String;
   /** -1.2345 */
-  private float firstChildValueSecond_Float;
+  private double firstChildValueSecond_Float;
   /** range 01,02,03,...,16 */
   private int secondChildId;
   /** YYMMDDHHMMSS */
@@ -102,11 +102,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
   /** -2048.0 */
   private java.lang.CharSequence secondChildValueFirst_String;
   /** -2048.0 */
-  private float secondChildValueFirst_Float;
+  private double secondChildValueFirst_Float;
   /** -1.2345 */
   private java.lang.CharSequence secondChildValueSecond_String;
   /** -1.2345 */
-  private float secondChildValueSecond_Float;
+  private double secondChildValueSecond_Float;
   /** range 01,02,03,...,16 */
   private int thirdChildId;
   /** YYMMDDHHMMSS */
@@ -116,11 +116,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
   /** -2048.0 */
   private java.lang.CharSequence thirdChildValueFirst_String;
   /** -2048.0 */
-  private float thirdChildValueFirst_Float;
+  private double thirdChildValueFirst_Float;
   /** -1.2345 */
   private java.lang.CharSequence thirdChildValueSecond_String;
   /** -1.2345 */
-  private float thirdChildValueSecond_Float;
+  private double thirdChildValueSecond_Float;
   private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> tags;
 
   /**
@@ -158,7 +158,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * @param thirdChildValueSecond_Float -1.2345
    * @param tags The new value for tags
    */
-  public SingleStationLine(java.lang.CharSequence frameStatus, java.lang.CharSequence parentEventTime, java.lang.CharSequence parentStatus, java.lang.Integer firstChildId, java.lang.CharSequence firstChildEventTime, java.lang.CharSequence firstChildDuration, java.lang.CharSequence firstChildValueFirst_String, java.lang.Float firstChildValueFirst_Float, java.lang.CharSequence firstChildValueSecond_String, java.lang.Float firstChildValueSecond_Float, java.lang.Integer secondChildId, java.lang.CharSequence secondChildEventTime, java.lang.CharSequence secondChildDuration, java.lang.CharSequence secondChildValueFirst_String, java.lang.Float secondChildValueFirst_Float, java.lang.CharSequence secondChildValueSecond_String, java.lang.Float secondChildValueSecond_Float, java.lang.Integer thirdChildId, java.lang.CharSequence thirdChildEventTime, java.lang.CharSequence thirdChildDuration, java.lang.CharSequence thirdChildValueFirst_String, java.lang.Float thirdChildValueFirst_Float, java.lang.CharSequence thirdChildValueSecond_String, java.lang.Float thirdChildValueSecond_Float, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> tags) {
+  public SingleStationLine(java.lang.CharSequence frameStatus, java.lang.CharSequence parentEventTime, java.lang.CharSequence parentStatus, java.lang.Integer firstChildId, java.lang.CharSequence firstChildEventTime, java.lang.CharSequence firstChildDuration, java.lang.CharSequence firstChildValueFirst_String, java.lang.Double firstChildValueFirst_Float, java.lang.CharSequence firstChildValueSecond_String, java.lang.Double firstChildValueSecond_Float, java.lang.Integer secondChildId, java.lang.CharSequence secondChildEventTime, java.lang.CharSequence secondChildDuration, java.lang.CharSequence secondChildValueFirst_String, java.lang.Double secondChildValueFirst_Float, java.lang.CharSequence secondChildValueSecond_String, java.lang.Double secondChildValueSecond_Float, java.lang.Integer thirdChildId, java.lang.CharSequence thirdChildEventTime, java.lang.CharSequence thirdChildDuration, java.lang.CharSequence thirdChildValueFirst_String, java.lang.Double thirdChildValueFirst_Float, java.lang.CharSequence thirdChildValueSecond_String, java.lang.Double thirdChildValueSecond_Float, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> tags) {
     this.frameStatus = frameStatus;
     this.parentEventTime = parentEventTime;
     this.parentStatus = parentStatus;
@@ -237,23 +237,23 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
     case 4: firstChildEventTime = (java.lang.CharSequence)value$; break;
     case 5: firstChildDuration = (java.lang.CharSequence)value$; break;
     case 6: firstChildValueFirst_String = (java.lang.CharSequence)value$; break;
-    case 7: firstChildValueFirst_Float = (java.lang.Float)value$; break;
+    case 7: firstChildValueFirst_Float = (java.lang.Double)value$; break;
     case 8: firstChildValueSecond_String = (java.lang.CharSequence)value$; break;
-    case 9: firstChildValueSecond_Float = (java.lang.Float)value$; break;
+    case 9: firstChildValueSecond_Float = (java.lang.Double)value$; break;
     case 10: secondChildId = (java.lang.Integer)value$; break;
     case 11: secondChildEventTime = (java.lang.CharSequence)value$; break;
     case 12: secondChildDuration = (java.lang.CharSequence)value$; break;
     case 13: secondChildValueFirst_String = (java.lang.CharSequence)value$; break;
-    case 14: secondChildValueFirst_Float = (java.lang.Float)value$; break;
+    case 14: secondChildValueFirst_Float = (java.lang.Double)value$; break;
     case 15: secondChildValueSecond_String = (java.lang.CharSequence)value$; break;
-    case 16: secondChildValueSecond_Float = (java.lang.Float)value$; break;
+    case 16: secondChildValueSecond_Float = (java.lang.Double)value$; break;
     case 17: thirdChildId = (java.lang.Integer)value$; break;
     case 18: thirdChildEventTime = (java.lang.CharSequence)value$; break;
     case 19: thirdChildDuration = (java.lang.CharSequence)value$; break;
     case 20: thirdChildValueFirst_String = (java.lang.CharSequence)value$; break;
-    case 21: thirdChildValueFirst_Float = (java.lang.Float)value$; break;
+    case 21: thirdChildValueFirst_Float = (java.lang.Double)value$; break;
     case 22: thirdChildValueSecond_String = (java.lang.CharSequence)value$; break;
-    case 23: thirdChildValueSecond_Float = (java.lang.Float)value$; break;
+    case 23: thirdChildValueSecond_Float = (java.lang.Double)value$; break;
     case 24: tags = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
@@ -389,7 +389,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'firstChildValueFirst_Float' field.
    * @return -2048.0
    */
-  public float getFirstChildValueFirstFloat() {
+  public double getFirstChildValueFirstFloat() {
     return firstChildValueFirst_Float;
   }
 
@@ -399,7 +399,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * -2048.0
    * @param value the value to set.
    */
-  public void setFirstChildValueFirstFloat(float value) {
+  public void setFirstChildValueFirstFloat(double value) {
     this.firstChildValueFirst_Float = value;
   }
 
@@ -425,7 +425,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'firstChildValueSecond_Float' field.
    * @return -1.2345
    */
-  public float getFirstChildValueSecondFloat() {
+  public double getFirstChildValueSecondFloat() {
     return firstChildValueSecond_Float;
   }
 
@@ -435,7 +435,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * -1.2345
    * @param value the value to set.
    */
-  public void setFirstChildValueSecondFloat(float value) {
+  public void setFirstChildValueSecondFloat(double value) {
     this.firstChildValueSecond_Float = value;
   }
 
@@ -515,7 +515,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'secondChildValueFirst_Float' field.
    * @return -2048.0
    */
-  public float getSecondChildValueFirstFloat() {
+  public double getSecondChildValueFirstFloat() {
     return secondChildValueFirst_Float;
   }
 
@@ -525,7 +525,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * -2048.0
    * @param value the value to set.
    */
-  public void setSecondChildValueFirstFloat(float value) {
+  public void setSecondChildValueFirstFloat(double value) {
     this.secondChildValueFirst_Float = value;
   }
 
@@ -551,7 +551,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'secondChildValueSecond_Float' field.
    * @return -1.2345
    */
-  public float getSecondChildValueSecondFloat() {
+  public double getSecondChildValueSecondFloat() {
     return secondChildValueSecond_Float;
   }
 
@@ -561,7 +561,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * -1.2345
    * @param value the value to set.
    */
-  public void setSecondChildValueSecondFloat(float value) {
+  public void setSecondChildValueSecondFloat(double value) {
     this.secondChildValueSecond_Float = value;
   }
 
@@ -641,7 +641,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'thirdChildValueFirst_Float' field.
    * @return -2048.0
    */
-  public float getThirdChildValueFirstFloat() {
+  public double getThirdChildValueFirstFloat() {
     return thirdChildValueFirst_Float;
   }
 
@@ -651,7 +651,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * -2048.0
    * @param value the value to set.
    */
-  public void setThirdChildValueFirstFloat(float value) {
+  public void setThirdChildValueFirstFloat(double value) {
     this.thirdChildValueFirst_Float = value;
   }
 
@@ -677,7 +677,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'thirdChildValueSecond_Float' field.
    * @return -1.2345
    */
-  public float getThirdChildValueSecondFloat() {
+  public double getThirdChildValueSecondFloat() {
     return thirdChildValueSecond_Float;
   }
 
@@ -687,7 +687,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
    * -1.2345
    * @param value the value to set.
    */
-  public void setThirdChildValueSecondFloat(float value) {
+  public void setThirdChildValueSecondFloat(double value) {
     this.thirdChildValueSecond_Float = value;
   }
 
@@ -764,11 +764,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
     /** -2048.0 */
     private java.lang.CharSequence firstChildValueFirst_String;
     /** -2048.0 */
-    private float firstChildValueFirst_Float;
+    private double firstChildValueFirst_Float;
     /** -1.2345 */
     private java.lang.CharSequence firstChildValueSecond_String;
     /** -1.2345 */
-    private float firstChildValueSecond_Float;
+    private double firstChildValueSecond_Float;
     /** range 01,02,03,...,16 */
     private int secondChildId;
     /** YYMMDDHHMMSS */
@@ -778,11 +778,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
     /** -2048.0 */
     private java.lang.CharSequence secondChildValueFirst_String;
     /** -2048.0 */
-    private float secondChildValueFirst_Float;
+    private double secondChildValueFirst_Float;
     /** -1.2345 */
     private java.lang.CharSequence secondChildValueSecond_String;
     /** -1.2345 */
-    private float secondChildValueSecond_Float;
+    private double secondChildValueSecond_Float;
     /** range 01,02,03,...,16 */
     private int thirdChildId;
     /** YYMMDDHHMMSS */
@@ -792,11 +792,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
     /** -2048.0 */
     private java.lang.CharSequence thirdChildValueFirst_String;
     /** -2048.0 */
-    private float thirdChildValueFirst_Float;
+    private double thirdChildValueFirst_Float;
     /** -1.2345 */
     private java.lang.CharSequence thirdChildValueSecond_String;
     /** -1.2345 */
-    private float thirdChildValueSecond_Float;
+    private double thirdChildValueSecond_Float;
     private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> tags;
 
     /** Creates a new Builder */
@@ -1332,7 +1332,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * -2048.0
       * @return The value.
       */
-    public float getFirstChildValueFirstFloat() {
+    public double getFirstChildValueFirstFloat() {
       return firstChildValueFirst_Float;
     }
 
@@ -1343,7 +1343,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'firstChildValueFirst_Float'.
       * @return This builder.
       */
-    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setFirstChildValueFirstFloat(float value) {
+    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setFirstChildValueFirstFloat(double value) {
       validate(fields()[7], value);
       this.firstChildValueFirst_Float = value;
       fieldSetFlags()[7] = true;
@@ -1419,7 +1419,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * -1.2345
       * @return The value.
       */
-    public float getFirstChildValueSecondFloat() {
+    public double getFirstChildValueSecondFloat() {
       return firstChildValueSecond_Float;
     }
 
@@ -1430,7 +1430,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'firstChildValueSecond_Float'.
       * @return This builder.
       */
-    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setFirstChildValueSecondFloat(float value) {
+    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setFirstChildValueSecondFloat(double value) {
       validate(fields()[9], value);
       this.firstChildValueSecond_Float = value;
       fieldSetFlags()[9] = true;
@@ -1637,7 +1637,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * -2048.0
       * @return The value.
       */
-    public float getSecondChildValueFirstFloat() {
+    public double getSecondChildValueFirstFloat() {
       return secondChildValueFirst_Float;
     }
 
@@ -1648,7 +1648,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'secondChildValueFirst_Float'.
       * @return This builder.
       */
-    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setSecondChildValueFirstFloat(float value) {
+    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setSecondChildValueFirstFloat(double value) {
       validate(fields()[14], value);
       this.secondChildValueFirst_Float = value;
       fieldSetFlags()[14] = true;
@@ -1724,7 +1724,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * -1.2345
       * @return The value.
       */
-    public float getSecondChildValueSecondFloat() {
+    public double getSecondChildValueSecondFloat() {
       return secondChildValueSecond_Float;
     }
 
@@ -1735,7 +1735,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'secondChildValueSecond_Float'.
       * @return This builder.
       */
-    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setSecondChildValueSecondFloat(float value) {
+    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setSecondChildValueSecondFloat(double value) {
       validate(fields()[16], value);
       this.secondChildValueSecond_Float = value;
       fieldSetFlags()[16] = true;
@@ -1942,7 +1942,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * -2048.0
       * @return The value.
       */
-    public float getThirdChildValueFirstFloat() {
+    public double getThirdChildValueFirstFloat() {
       return thirdChildValueFirst_Float;
     }
 
@@ -1953,7 +1953,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'thirdChildValueFirst_Float'.
       * @return This builder.
       */
-    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setThirdChildValueFirstFloat(float value) {
+    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setThirdChildValueFirstFloat(double value) {
       validate(fields()[21], value);
       this.thirdChildValueFirst_Float = value;
       fieldSetFlags()[21] = true;
@@ -2029,7 +2029,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * -1.2345
       * @return The value.
       */
-    public float getThirdChildValueSecondFloat() {
+    public double getThirdChildValueSecondFloat() {
       return thirdChildValueSecond_Float;
     }
 
@@ -2040,7 +2040,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'thirdChildValueSecond_Float'.
       * @return This builder.
       */
-    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setThirdChildValueSecondFloat(float value) {
+    public ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine.Builder setThirdChildValueSecondFloat(double value) {
       validate(fields()[23], value);
       this.thirdChildValueSecond_Float = value;
       fieldSetFlags()[23] = true;
@@ -2119,23 +2119,23 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
         record.firstChildEventTime = fieldSetFlags()[4] ? this.firstChildEventTime : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.firstChildDuration = fieldSetFlags()[5] ? this.firstChildDuration : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.firstChildValueFirst_String = fieldSetFlags()[6] ? this.firstChildValueFirst_String : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.firstChildValueFirst_Float = fieldSetFlags()[7] ? this.firstChildValueFirst_Float : (java.lang.Float) defaultValue(fields()[7]);
+        record.firstChildValueFirst_Float = fieldSetFlags()[7] ? this.firstChildValueFirst_Float : (java.lang.Double) defaultValue(fields()[7]);
         record.firstChildValueSecond_String = fieldSetFlags()[8] ? this.firstChildValueSecond_String : (java.lang.CharSequence) defaultValue(fields()[8]);
-        record.firstChildValueSecond_Float = fieldSetFlags()[9] ? this.firstChildValueSecond_Float : (java.lang.Float) defaultValue(fields()[9]);
+        record.firstChildValueSecond_Float = fieldSetFlags()[9] ? this.firstChildValueSecond_Float : (java.lang.Double) defaultValue(fields()[9]);
         record.secondChildId = fieldSetFlags()[10] ? this.secondChildId : (java.lang.Integer) defaultValue(fields()[10]);
         record.secondChildEventTime = fieldSetFlags()[11] ? this.secondChildEventTime : (java.lang.CharSequence) defaultValue(fields()[11]);
         record.secondChildDuration = fieldSetFlags()[12] ? this.secondChildDuration : (java.lang.CharSequence) defaultValue(fields()[12]);
         record.secondChildValueFirst_String = fieldSetFlags()[13] ? this.secondChildValueFirst_String : (java.lang.CharSequence) defaultValue(fields()[13]);
-        record.secondChildValueFirst_Float = fieldSetFlags()[14] ? this.secondChildValueFirst_Float : (java.lang.Float) defaultValue(fields()[14]);
+        record.secondChildValueFirst_Float = fieldSetFlags()[14] ? this.secondChildValueFirst_Float : (java.lang.Double) defaultValue(fields()[14]);
         record.secondChildValueSecond_String = fieldSetFlags()[15] ? this.secondChildValueSecond_String : (java.lang.CharSequence) defaultValue(fields()[15]);
-        record.secondChildValueSecond_Float = fieldSetFlags()[16] ? this.secondChildValueSecond_Float : (java.lang.Float) defaultValue(fields()[16]);
+        record.secondChildValueSecond_Float = fieldSetFlags()[16] ? this.secondChildValueSecond_Float : (java.lang.Double) defaultValue(fields()[16]);
         record.thirdChildId = fieldSetFlags()[17] ? this.thirdChildId : (java.lang.Integer) defaultValue(fields()[17]);
         record.thirdChildEventTime = fieldSetFlags()[18] ? this.thirdChildEventTime : (java.lang.CharSequence) defaultValue(fields()[18]);
         record.thirdChildDuration = fieldSetFlags()[19] ? this.thirdChildDuration : (java.lang.CharSequence) defaultValue(fields()[19]);
         record.thirdChildValueFirst_String = fieldSetFlags()[20] ? this.thirdChildValueFirst_String : (java.lang.CharSequence) defaultValue(fields()[20]);
-        record.thirdChildValueFirst_Float = fieldSetFlags()[21] ? this.thirdChildValueFirst_Float : (java.lang.Float) defaultValue(fields()[21]);
+        record.thirdChildValueFirst_Float = fieldSetFlags()[21] ? this.thirdChildValueFirst_Float : (java.lang.Double) defaultValue(fields()[21]);
         record.thirdChildValueSecond_String = fieldSetFlags()[22] ? this.thirdChildValueSecond_String : (java.lang.CharSequence) defaultValue(fields()[22]);
-        record.thirdChildValueSecond_Float = fieldSetFlags()[23] ? this.thirdChildValueSecond_Float : (java.lang.Float) defaultValue(fields()[23]);
+        record.thirdChildValueSecond_Float = fieldSetFlags()[23] ? this.thirdChildValueSecond_Float : (java.lang.Double) defaultValue(fields()[23]);
         record.tags = fieldSetFlags()[24] ? this.tags : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[24]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
@@ -2183,11 +2183,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
 
     out.writeString(this.firstChildValueFirst_String);
 
-    out.writeFloat(this.firstChildValueFirst_Float);
+    out.writeDouble(this.firstChildValueFirst_Float);
 
     out.writeString(this.firstChildValueSecond_String);
 
-    out.writeFloat(this.firstChildValueSecond_Float);
+    out.writeDouble(this.firstChildValueSecond_Float);
 
     out.writeInt(this.secondChildId);
 
@@ -2197,11 +2197,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
 
     out.writeString(this.secondChildValueFirst_String);
 
-    out.writeFloat(this.secondChildValueFirst_Float);
+    out.writeDouble(this.secondChildValueFirst_Float);
 
     out.writeString(this.secondChildValueSecond_String);
 
-    out.writeFloat(this.secondChildValueSecond_Float);
+    out.writeDouble(this.secondChildValueSecond_Float);
 
     out.writeInt(this.thirdChildId);
 
@@ -2211,11 +2211,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
 
     out.writeString(this.thirdChildValueFirst_String);
 
-    out.writeFloat(this.thirdChildValueFirst_Float);
+    out.writeDouble(this.thirdChildValueFirst_Float);
 
     out.writeString(this.thirdChildValueSecond_String);
 
-    out.writeFloat(this.thirdChildValueSecond_Float);
+    out.writeDouble(this.thirdChildValueSecond_Float);
 
     long size0 = this.tags.size();
     out.writeMapStart();
@@ -2253,11 +2253,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
 
       this.firstChildValueFirst_String = in.readString(this.firstChildValueFirst_String instanceof Utf8 ? (Utf8)this.firstChildValueFirst_String : null);
 
-      this.firstChildValueFirst_Float = in.readFloat();
+      this.firstChildValueFirst_Float = in.readDouble();
 
       this.firstChildValueSecond_String = in.readString(this.firstChildValueSecond_String instanceof Utf8 ? (Utf8)this.firstChildValueSecond_String : null);
 
-      this.firstChildValueSecond_Float = in.readFloat();
+      this.firstChildValueSecond_Float = in.readDouble();
 
       this.secondChildId = in.readInt();
 
@@ -2267,11 +2267,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
 
       this.secondChildValueFirst_String = in.readString(this.secondChildValueFirst_String instanceof Utf8 ? (Utf8)this.secondChildValueFirst_String : null);
 
-      this.secondChildValueFirst_Float = in.readFloat();
+      this.secondChildValueFirst_Float = in.readDouble();
 
       this.secondChildValueSecond_String = in.readString(this.secondChildValueSecond_String instanceof Utf8 ? (Utf8)this.secondChildValueSecond_String : null);
 
-      this.secondChildValueSecond_Float = in.readFloat();
+      this.secondChildValueSecond_Float = in.readDouble();
 
       this.thirdChildId = in.readInt();
 
@@ -2281,11 +2281,11 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
 
       this.thirdChildValueFirst_String = in.readString(this.thirdChildValueFirst_String instanceof Utf8 ? (Utf8)this.thirdChildValueFirst_String : null);
 
-      this.thirdChildValueFirst_Float = in.readFloat();
+      this.thirdChildValueFirst_Float = in.readDouble();
 
       this.thirdChildValueSecond_String = in.readString(this.thirdChildValueSecond_String instanceof Utf8 ? (Utf8)this.thirdChildValueSecond_String : null);
 
-      this.thirdChildValueSecond_Float = in.readFloat();
+      this.thirdChildValueSecond_Float = in.readDouble();
 
       long size0 = in.readMapStart();
       java.util.Map<java.lang.CharSequence,java.lang.CharSequence> m0 = this.tags; // Need fresh name due to limitation of macro system
@@ -2335,7 +2335,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
           break;
 
         case 7:
-          this.firstChildValueFirst_Float = in.readFloat();
+          this.firstChildValueFirst_Float = in.readDouble();
           break;
 
         case 8:
@@ -2343,7 +2343,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
           break;
 
         case 9:
-          this.firstChildValueSecond_Float = in.readFloat();
+          this.firstChildValueSecond_Float = in.readDouble();
           break;
 
         case 10:
@@ -2363,7 +2363,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
           break;
 
         case 14:
-          this.secondChildValueFirst_Float = in.readFloat();
+          this.secondChildValueFirst_Float = in.readDouble();
           break;
 
         case 15:
@@ -2371,7 +2371,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
           break;
 
         case 16:
-          this.secondChildValueSecond_Float = in.readFloat();
+          this.secondChildValueSecond_Float = in.readDouble();
           break;
 
         case 17:
@@ -2391,7 +2391,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
           break;
 
         case 21:
-          this.thirdChildValueFirst_Float = in.readFloat();
+          this.thirdChildValueFirst_Float = in.readDouble();
           break;
 
         case 22:
@@ -2399,7 +2399,7 @@ public class SingleStationLine extends org.apache.avro.specific.SpecificRecordBa
           break;
 
         case 23:
-          this.thirdChildValueSecond_Float = in.readFloat();
+          this.thirdChildValueSecond_Float = in.readDouble();
           break;
 
         case 24:
