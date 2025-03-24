@@ -1,4 +1,4 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter.product;
+package ntsc.cas.cn.pipelines.operator.binaryConverter;
 
 public class CRC24 {
     private static final int[] CRC_LOOKUP = new int[256];

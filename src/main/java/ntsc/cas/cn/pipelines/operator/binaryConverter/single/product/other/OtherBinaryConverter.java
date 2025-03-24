@@ -1,7 +1,7 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter.product.other;
+package ntsc.cas.cn.pipelines.operator.binaryConverter.single.product.other;
 
 import ntsc.cas.cn.pipelines.DataType;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.BinaryConverter;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.single.BinaryConverter;
 
 public class OtherBinaryConverter implements BinaryConverter {
     @Override

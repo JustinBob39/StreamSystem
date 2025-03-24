@@ -1,6 +1,6 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter.product.difference;
+package ntsc.cas.cn.pipelines.operator.binaryConverter.single.product.difference;
 
-import ntsc.cas.cn.pipelines.operator.binaryConverter.product.Time;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.Time;
 
 public class Entry {
     public int parentId;

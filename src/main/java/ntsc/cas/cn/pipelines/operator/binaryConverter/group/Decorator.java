@@ -1,26 +1,28 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter.product;
+package ntsc.cas.cn.pipelines.operator.binaryConverter.group;
 
 import ntsc.cas.cn.pipelines.DataType;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.BinaryConverter;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.CRC24;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.Util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.List;
 
-public class Decorator implements BinaryConverter {
-    private static final int PREA_BIT_COUNT = 8;
-    private static final int RESV_BIT_COUNT = 6;
-    private static final int LEN_BIT_COUNT = 10;
+public class Decorator implements GroupBinaryConverter {
+    public static final int PREA_BIT_COUNT = 8;
+    public static final int RESV_BIT_COUNT = 6;
+    public static final int LEN_BIT_COUNT = 10;
     private static final int CRC_BIT_COUNT = 24;
 
     private byte[] body;
     private byte[] head;
     private byte[] tail;
 
-    private final BinaryConverter converter;
+    private final GroupBinaryConverter converter;
 
-    public Decorator(final BinaryConverter converter) {
+    public Decorator(final GroupBinaryConverter converter) {
         this.converter = converter;
     }
 
@@ -61,8 +63,8 @@ public class Decorator implements BinaryConverter {
     }
 
     @Override
-    public byte[] convertToBinary(final Object avro, final DataType type) {
-        body = converter.convertToBinary(avro, type); // must call first, head need body length
+    public byte[] convertToBinary(final List<Object> avro, final DataType type, final DataType subType) {
+        body = converter.convertToBinary(avro, type, subType); // must call first, head need body length
         extractHead();
         extractTail();
         return concatenateByteArrays(head, body, tail);

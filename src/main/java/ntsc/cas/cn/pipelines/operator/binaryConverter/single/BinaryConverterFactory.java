@@ -1,9 +1,8 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter;
+package ntsc.cas.cn.pipelines.operator.binaryConverter.single;
 
 import ntsc.cas.cn.pipelines.DataType;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.product.Decorator;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.product.difference.DifferenceBinaryConverter;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.product.other.OtherBinaryConverter;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.single.product.difference.DifferenceBinaryConverter;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.single.product.other.OtherBinaryConverter;
 
 // use then drop, one shot
 public class BinaryConverterFactory {

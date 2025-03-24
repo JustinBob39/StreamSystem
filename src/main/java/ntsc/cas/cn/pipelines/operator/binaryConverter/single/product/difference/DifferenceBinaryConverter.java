@@ -1,11 +1,11 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter.product.difference;
+package ntsc.cas.cn.pipelines.operator.binaryConverter.single.product.difference;
 
 import ntsc.cas.cn.avro.difference.oneRound.Child;
 import ntsc.cas.cn.avro.difference.oneRound.OneRound;
 import ntsc.cas.cn.avro.difference.oneRound.SingleStation;
 import ntsc.cas.cn.pipelines.DataType;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.BinaryConverter;
-import ntsc.cas.cn.pipelines.operator.binaryConverter.product.Util;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.single.BinaryConverter;
+import ntsc.cas.cn.pipelines.operator.binaryConverter.Util;
 import org.apache.avro.Conversions;
 import org.apache.avro.LogicalType;
 import org.apache.avro.Schema;
@@ -47,8 +47,8 @@ public class DifferenceBinaryConverter implements BinaryConverter {
         final LogicalType typeSecond = childrenSchema.getField("childValueSecond").schema().getLogicalType();
         final BigDecimal decimalFirst = conversion.fromBytes(childValueFirst, null, typeFirst);
         final BigDecimal decimalSecond = conversion.fromBytes(childValueSecond, null, typeSecond);
-        subEntry.childValueFirst = decimalFirst.intValue();
-        subEntry.childValueSecond = decimalSecond.intValue();
+        subEntry.childValueFirst = decimalFirst.movePointRight(decimalFirst.scale()).intValue();
+        subEntry.childValueSecond = decimalSecond.movePointRight(decimalSecond.scale()).intValue();
     }
 
     private void fillInterEntry(final SingleStation station) {
@@ -95,14 +95,14 @@ public class DifferenceBinaryConverter implements BinaryConverter {
         int bitCount = Constant.subEntryIndexLength.get(Constant.SubEntryIndex.ChildEventTime);
         Util.extractTime(interEntry.subEntries[ith].childEventTime, idx, interBinary);
         idx += bitCount;
-        bitCount = Constant.subEntryIndexLength.get(Constant.SubEntryIndex.ChildDuration);
-        Util.extractInt(interEntry.subEntries[ith].childDuration, idx, bitCount, interBinary);
-        idx += bitCount;
         bitCount = Constant.subEntryIndexLength.get(Constant.SubEntryIndex.ChildValueFirst);
         Util.extractInt(interEntry.subEntries[ith].childValueFirst, idx, bitCount, interBinary);
         idx += bitCount;
         bitCount = Constant.subEntryIndexLength.get(Constant.SubEntryIndex.ChildValueSecond);
         Util.extractInt(interEntry.subEntries[ith].childValueSecond, idx, bitCount, interBinary);
+        idx += bitCount;
+        bitCount = Constant.subEntryIndexLength.get(Constant.SubEntryIndex.ChildDuration);
+        Util.extractInt(interEntry.subEntries[ith].childDuration, idx, bitCount, interBinary);
         idx += bitCount;
     }
 

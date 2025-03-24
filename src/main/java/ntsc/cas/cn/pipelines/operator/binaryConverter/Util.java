@@ -1,4 +1,4 @@
-package ntsc.cas.cn.pipelines.operator.binaryConverter.product;
+package ntsc.cas.cn.pipelines.operator.binaryConverter;
 
 import java.time.Instant;
 import java.time.ZoneId;
