@@ -226,7 +226,7 @@ kafkaConsumer.poll(Duration.ofSeconds(62));
 
 假设共有3个差分站，初始化后
 
-```json
+```txt
 差分站1: 全零初始数据，初始状态
 差分站2: 全零初始数据，初始状态
 差分站3: 全零初始数据，初始状态
@@ -234,7 +234,7 @@ kafkaConsumer.poll(Duration.ofSeconds(62));
 
 上游传来新的差分站数据，但是只包含差分站1
 
-```json
+```txt
 差分站1: 差分站1数据，正常状态
 差分站2: 全零初始数据，初始状态
 差分站3: 全零初始数据，初始状态
@@ -242,7 +242,7 @@ kafkaConsumer.poll(Duration.ofSeconds(62));
 
 上游异常，62秒内未传来新数据
 
-```json
+```txt
 差分站1: 差分站1数据，超时状态
 差分站2: 全零初始数据，初始状态
 差分站3: 全零初始数据，初始状态
@@ -298,7 +298,7 @@ kafkaConsumer.poll(Duration.ofSeconds(62));
 对接收机，利用flatMap算子，将大JSON中的每个差分站信息提取出来，完成二进制，每个差分站转化的结果输出到单独对应的 topic 中
 （每个topic理解为一条数据通路），实现数据一到多的转换，用于后续发送到Emqx
 
-```json
+```txt
 主题，数据
 差分站1，差分站1二进制数据
 差分站2，差分站2二进制数据
@@ -314,7 +314,7 @@ Emqx为中国软件，在信创、去IOE的背景下，能规避掉一些风险
 对互联网，利用flatMap算子，将大JSON中每个差分站信息提取出来，转化为 InfluxDB Line 协议格式，结果输出到一个相同的topic即可，
 用于后续以Schemaless的方式存到时序数据库TDengine
 
-```json
+```txt
 +-----------+--------+-+---------+-+---------+
 |measurement|,tag_set| |field_set| |timestamp|
 +-----------+--------+-+---------+-+---------+
