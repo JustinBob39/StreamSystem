@@ -34,6 +34,7 @@ public class DifferenceOperatorMQTT implements OperatorMQTT {
     static final String sinkTopic = "Operator-MQTT_Difference";
     static final DataType type = DataType.Difference; // binary need
     static final String applicationId = "MQTT-Difference";
+    static final String mqttPrefix = "difference/";
 
     @Override
     public void startOperatorMQTT() {
@@ -55,7 +56,7 @@ public class DifferenceOperatorMQTT implements OperatorMQTT {
         final KStream<String, OneRound> source = builder.stream(sourceTopic, Consumed.with(Serdes.String(), sourceValueSpecificAvroSerde));
 
         // sink
-        source.flatMap((oldKey, message) -> message.getAllStations().stream().map(station -> new KeyValue<>(String.valueOf(station.getParentId()), DifferenceOperatorMQTT.convertSingleStationToBinary(station))).collect(Collectors.toList())).to((key, value, recordContext) -> sinkTopic + "_" + key, Produced.with(Serdes.String(), Serdes.ByteArray()));
+        source.flatMap((oldKey, message) -> message.getAllStations().stream().map(station -> new KeyValue<>(mqttPrefix + station.getParentId(), DifferenceOperatorMQTT.convertSingleStationToBinary(station))).collect(Collectors.toList())).to((key, value, recordContext) -> sinkTopic + "_" + key.substring(key.indexOf('/') + 1), Produced.with(Serdes.String(), Serdes.ByteArray()));
 
         // start
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, applicationId);

@@ -8,6 +8,8 @@
     "topics": "Operator-MQTT_Difference_1",
     "mqtt.server.uri": "tcp://192.168.1.108:1883",
     "mqtt.qos": "2",
-    "mqtt.retained.enabled": "false"
+    "mqtt.retained.enabled": "false",
+    "transforms": "setTopic",
+    "transforms.setTopic.type": "io.confluent.connect.transforms.ExtractTopic$Key"
   }
 }
