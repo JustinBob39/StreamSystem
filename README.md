@@ -429,6 +429,9 @@ overview
 MQTT 平台 mosquitto 
 ![img_16.png](images/img_16.png)
 
+MQTT 平台 Emqx
+![img_21.png](images/img_21.png)
+
 InfluxDB 数据库，数据正确存入
 ![img_17.png](images/img_17.png)
 
@@ -436,3 +439,5 @@ InfluxDB 数据库，数据正确存入
 
 MQTT 用户，用户可以消费到正确的二进制数据
 ![img_19.png](images/img_19.png)
+
+![img_20.png](images/img_20.png)

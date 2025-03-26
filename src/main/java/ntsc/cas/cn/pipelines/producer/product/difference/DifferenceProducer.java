@@ -46,7 +46,7 @@ public class DifferenceProducer implements Producer {
             final LogicalType typeSecond = childrenSchema.getField("childValueSecond").schema().getLogicalType();
             final int scaleFirst = ((LogicalTypes.Decimal) typeFirst).getScale();
             final int scaleSecond = ((LogicalTypes.Decimal) typeSecond).getScale();
-            final BigDecimal decimalFirst = new BigDecimal("-2048.0").setScale(scaleFirst, RoundingMode.HALF_UP);
+            final BigDecimal decimalFirst = new BigDecimal("-1024.0").setScale(scaleFirst, RoundingMode.HALF_UP);
             final BigDecimal decimalSecond = new BigDecimal("-1.2345").setScale(scaleSecond, RoundingMode.HALF_UP);
             final ByteBuffer bytesFirst = conversion.toBytes(decimalFirst, null, typeFirst);
             final ByteBuffer bytesSecond = conversion.toBytes(decimalSecond, null, typeSecond);
