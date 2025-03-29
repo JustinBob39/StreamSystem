@@ -2,6 +2,7 @@ package ntsc.cas.cn.pipelines.operator.influxdb.product.difference;
 
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
+import ntsc.cas.cn.avro.difference.oneRound.Child;
 import ntsc.cas.cn.avro.difference.oneRound.OneRound;
 import ntsc.cas.cn.avro.difference.oneRound.SingleStation;
 import ntsc.cas.cn.avro.difference.singleStationLine.SingleStationLine;
@@ -28,6 +29,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
@@ -77,6 +79,9 @@ public class DifferenceOperatorInfluxDB implements OperatorInfluxDB {
     }
 
     private static SingleStationLine convertSingleStationToLine(final SingleStation station) {
+        // more stable in DB
+        station.getChildren().sort(Comparator.comparingInt(Child::getChildId));
+
         final SingleStationLine.Builder builder = SingleStationLine.newBuilder();
 
         builder.setTags(Collections.singletonMap("parentId", String.valueOf(station.getParentId())));
